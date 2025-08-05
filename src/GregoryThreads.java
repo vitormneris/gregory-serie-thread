@@ -5,7 +5,7 @@ import java.util.concurrent.atomic.AtomicLong;
 import java.util.stream.Stream;
 
 public class GregoryThreads {
-    private static final BigDecimal[] bigDecimals = new BigDecimal[8];
+    private final BigDecimal[] bigDecimals = new BigDecimal[8];
 
     private final long accuracy;
     private final int threadNumber;
@@ -22,7 +22,7 @@ public class GregoryThreads {
         }
     }
 
-    public static BigDecimal getBigDecimalTotal() {
+    public BigDecimal getBigDecimalTotal() {
         BigDecimal decimal = BigDecimal.ZERO;
         for (BigDecimal b : bigDecimals) {
             if (Objects.nonNull(b)) {
